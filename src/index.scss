@@ -1,0 +1,46 @@
+html, body {
+	margin: 0;
+}
+.minefield {
+	display: flex;
+	&__grid {
+		position: relative;
+		flex: 1 1 auto;
+		margin:0px auto;
+		display: flex;
+		flex-direction: column;
+	}
+	&__row {
+		display: flex;
+		flex-direction: row;
+	}
+	&__cell {
+		width: 100px;
+		height: 100px;
+		background: white;
+		position: relative;
+		margin: 0 2px 2px 0;
+		&--has-mine {
+			background: black;
+		}
+		&--visited::before {
+			position: absolute;
+			content: '';
+			background: red;
+			witdh: 10px;
+			top:10px;
+			left:10px;
+			right: 10px;
+			bottom: 10px;
+		}
+	}
+	&__game-details {
+		flex: 1 1 auto;
+		&__moves {
+
+		}
+		&__result{
+
+		}
+	}
+}
