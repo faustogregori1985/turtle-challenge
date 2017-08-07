@@ -1,6 +1,6 @@
 import angular from 'angular';
 
-import { hello } from './app/minefield';
+import { minefield } from './app/minefield';
 import 'angular-ui-router';
 import routesConfig from './routes';
 

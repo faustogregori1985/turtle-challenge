@@ -13,12 +13,7 @@ export const minefield = {
 			this.minefield = minefieldSettings;
 			this.movesList = angular.copy(movesList);
 			this.moveIndex = 0;
-			this.exitPoint = false;
 			this.uiMoves = [];
-			this.currentMove = {
-				status: null,
-				name: null
-			};
 			this.moveTurtle();
 		};
 		this.getNextMove = (index = 0) => {
@@ -59,7 +54,6 @@ export const minefield = {
 			console.log('OK - ', move.row, ' ', move.col);
 			this.moveIndex++;
 			if (this.isGameNotOver(move)) {
-				console.log(move);
 				this.moveTurtle();
 			} else {
 				console.log('Turtle is safe!');
@@ -67,7 +61,6 @@ export const minefield = {
 		};
 		this.failureHandler = move => {
 			console.log('Failure - ', move.row, ' ', move.col);
-			this.exitPointNotReach = true;
 		};
 		this.isGameNotOver = move => {
 			return move.row !== (MAX_ROW - 1);
